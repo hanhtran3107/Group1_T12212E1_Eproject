@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
+    <style>
+     
+
+        .carousel-inner>.item>img,
+        .carousel-inner>.item>a>img {
+            width: 100%;
+            aspect-ratio: 3 / 1;
+            margin: auto;
+        }
+    </style>
+<style>
+    .carousel-inner > .item > img,
+    .carousel-inner > .item > a > img {
+      width: 100%;
+      margin: auto;
+      aspect-ratio: 3 / 1;
+    }
+    .img-responsive {
+      object-fit: fill;
+    }
+    .title-1 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-top: 12px;
+      text-align: center;
+    }
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+    body {
+      font-family: "Poppins", sans-serif;
+      color: #444444;
+    }
+
+    a,
+    a:hover {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .section-products {
+      padding: 80px 0 54px;
+    }
+
+    .section-products .header {
+      margin-bottom: 50px;
+    }
+
+    .section-products .header h3 {
+      font-size: 1rem;
+      color: #fe302f;
+      font-weight: 500;
+    }
+
+    .section-products .header h2 {
+      font-size: 2.2rem;
+      font-weight: 400;
+      color: #444444;
+    }
+
+    .section-products .single-product {
+      margin-bottom: 26px;
+    }
+
+    .section-products .single-product .part-1 {
+      position: relative;
+      height: 290px;
+      max-height: 290px;
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+
+    .section-products .single-product .part-1::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      transition: all 0.3s;
+    }
+
+    .section-products .single-product:hover .part-1::before {
+      transform: scale(1.2, 1.2) rotate(5deg);
+    }
+
+    .section-products .single-product .part-1 .discount,
+    .section-products .single-product .part-1 .new {
+      position: absolute;
+      top: 15px;
+      left: 20px;
+      color: #ffffff;
+      background-color: #fe302f;
+      padding: 2px 8px;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+    }
+
+    .section-products .single-product .part-1 .new {
+      left: 0;
+      background-color: #444444;
+    }
+
+    .section-products .single-product .part-1 ul {
+      position: absolute;
+      bottom: -41px;
+      left: 20px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      opacity: 0;
+      transition: bottom 0.5s, opacity 0.5s;
+    }
+
+    .section-products .single-product:hover .part-1 ul {
+      bottom: 30px;
+      opacity: 1;
+    }
+
+    .section-products .single-product .part-1 ul li {
+      display: inline-block;
+      margin-right: 4px;
+    }
+
+    .section-products .single-product .part-1 ul li a {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      background-color: #ffffff;
+      color: #444444;
+      text-align: center;
+      box-shadow: 0 2px 20px rgb(50 50 50 / 10%);
+      transition: color 0.2s;
+    }
+
+    .section-products .single-product .part-1 ul li a:hover {
+      color: #fe302f;
+    }
+
+    .section-products .single-product .part-2 .product-title {
+      font-size: 1rem;
+    }
+
+    .section-products .single-product .part-2 h4 {
+      display: inline-block;
+      font-size: 1rem;
+    }
+
+    .section-products .single-product .part-2 .product-old-price {
+      position: relative;
+      padding: 0 7px;
+      margin-right: 2px;
+      opacity: 0.6;
+    }
+
+    .section-products .single-product .part-2 .product-old-price::after {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: #444444;
+      transform: translateY(-50%);
+    }
+  </style>
+  <style>
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropbtn {
+      background-color: #ed7186;
+      color: #9d9d9d;
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      z-index: 1;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  </style>
+  <style>
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .popup-inner {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    .popup-inner h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .popup-inner p {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    body {
+        background-color: pink;
+    }
+  </style>
+
+</head>
+
+<body>
+    <div
+        class="modal fade"
+        id="addadminprofile"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+        >
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                Product information
+                </h5>
+                <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+                >
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <input type="hidden" id="id-customer" />
+                <div class="form-group">
+                <img
+                    id="product-img"
+                    style="width: 100%; aspect-ratio: 1 / 1"
+                    src="https://lh3.google.com/u/0/d/1pJza_MldB9MEbUDsuYp9gH6bWD5riGQY=w275-h261-p-k-nu-iv1"
+                    alt=""
+                />
+                </div>
+                <div class="form-group">
+                <label>Product name: </label>
+                <span id="product-title"></span>
+                </div>
+                <div class="form-group">
+                <label>Product specification: </label>
+                <pre style="background-color: white; font-size: 16px;text-align: left;white-space: pre-line;" id="product-specification"></pre>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+                >
+                Close
+                </button>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-1">
+        <!-- khoi menu -->
+        <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a style="display: flex; justify-content: center; align-items: center; gap: 10px" class="navbar-brand" href="#" ><image src="logo.jpg" height="30px" width="30px"> OtopuStore</a>
+                </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Product</a></li>
+                    <li><a href="favoriteset.html">Favorite Sets</a></li>
+                    <li class="dropdown">
+                        <button class="dropbtn">Category</button>
+                        <div class="dropdown-content">
+                          <a href="14_2.html">14 / 2</a>
+                          <a href="birthday.html">Birthday</a>
+                          <a href="motherdays.html">Mother's day</a>
+                          <a href="noel.html">Noel</a>
+                        </div>
+                    </li>
+                </ul>
+
+                <form class="navbar-form navbar-left" id="formSearch">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" id="search" name="search">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit">
+                                <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">
+                        <i class="glyphicon glyphicon-shopping-cart cart-icon" data-toggle="modal" data-target="#cart">
+                            <b><span class="total-count badge cart-badge"></span></b>
+                        </i></a>
+                    </li>
+                    <li><a href="contact.html">Contact us</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+        <div style="height: 50px"></div>
+        <!-- ket thuc khoi menu -->
+
+        <!-- carousel -->
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+
+                <div class="item active">
+                    <img src="image/ny_1.jpg" alt="Chania" width="460" height="345">
+                    <div class="carousel-caption">
+                        <h3>New Year Gift Set</h3>
+                        <p>Beautiful set to celebrate your New Year</p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="image/ny_2.jpeg" alt="Chania" width="460" height="345" class="img-responsive">
+                    <div class="carousel-caption">
+                        <h3>New Year Celebrate</h3>
+                        <p>Beautiful set to celebrate your New Year</p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="image/mom_flower.jpg" alt="Chania" width="460" height="345" class="img-responsive">
+                    <div class="carousel-caption">
+                        <h3>For Mom</h3>
+                        <p>We wish your Mom all the best on this Special Day.</p>
+                    </div>
+                </div>
+
+
+                <div class="item">
+                    <img src="image/mom_candle.jpg" alt="Flower" width="460" height="345">
+                    <div class="carousel-caption">
+                        <h3>For Mom</h3>
+                        <p>We wish your Mom all the best on this Special Day.</p>
+                    </div>
+                </div>
+
+
+                <div class="item">
+                    <img src="image/friend_candle.jpg" alt="Flower" width="460" height="345">
+                    <div class="carousel-caption">
+                        <h3>Set for your buddies</h3>
+                        <p>Surprise your friends with this lovely candles set</p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="image/love_special.jpg" alt="Chania" width="460" height="345" class="img-responsive">
+                    <div class="carousel-caption">
+                        <h3>For Lover</h3>
+                        <p>Beautiful set to celebrate your Anniversary with your Lover</p>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <div id="wrap-p01"></div>
+        <script>
+            const arr142 = [
+              {
+                img: "https://lh3.google.com/u/0/d/1pJza_MldB9MEbUDsuYp9gH6bWD5riGQY=w275-h261-p-k-nu-iv1",
+                title: "Đồng hồ 1",
+                specification: `- Leather strap watch for couple
+                  Watch strap length: 22-24cm
+                  - Dial size: 4cm and 2.8cm
+                  Watch glass material: scratch-resistant mirenal crystal glass
+                  - Display function: Hours, Minutes, Seconds,
+                  - Power: Use battery
+                  - Waterproof level: 3atm water resistant (hand wash, light face wash)
+                  - Color: Black, brown
+                  `,
+              },
+              {
+                img: "https://lh3.google.com/u/0/d/1cnvVLo9kJHnS-ahxum1-xuYFzHIG5Gtu=w275-h261-p-k-nu-iv1",
+                title: "Đồng hồ 2",
+                specification: `- Leather strap watch for couple
+                  Watch strap length: 22-24cm
+                  - Dial size: 4cm and 2.8cm
+                  Watch glass material: scratch-resistant mirenal crystal glass
+                  - Display function: Hours, Minutes, Seconds,
+                  - Power: Use battery
+                  - Waterproof level: 3atm water resistant (hand wash, light face wash)
+                  - Color: Black, brown
+                  `,
+              },
+              {
+                img: "https://lh3.google.com/u/0/d/1-l8c5eonXntDIcqnfN-rU2ghO8W1rpGh=w275-h261-p-k-nu-iv1",
+                title: "Đồng hồ 3",
+                specification: `- Leather strap watch for couple
+                  Watch strap length: 22-24cm
+                  - Dial size: 4cm and 2.8cm
+                  Watch glass material: scratch-resistant mirenal crystal glass
+                  - Display function: Hours, Minutes, Seconds,
+                  - Power: Use battery
+                  - Waterproof level: 3atm water resistant (hand wash, light face wash)
+                  - Color: Black, brown
+                  `,
+              },
+              {
+                img: "https://lh3.google.com/u/0/d/1uXGS4Zt6PWRsc42eg2FF8XGyGrG7HBS8=w275-h261-p-k-nu-iv1",
+                title: "Đồng hồ 4",
+                specification: `- Leather strap watch for couple
+                  Watch strap length: 22-24cm
+                  - Dial size: 4cm and 2.8cm
+                  Watch glass material: scratch-resistant mirenal crystal glass
+                  - Display function: Hours, Minutes, Seconds,
+                  - Power: Use battery
+                  - Waterproof level: 3atm water resistant (hand wash, light face wash)
+                  - Color: Black, brown
+                  `,
+              },
+              {
+                img: "https://lh3.google.com/u/0/d/1jrPL-jf-P3yE-ICz2TXHzUqdmE53qbs5=w275-h261-p-k-nu-iv1",
+                title: "Hoa hồng led",
+                specification: `
+                      - The gift box is designed with delicate and elegant decorative paper wrapped hard paper with the words "You and me together. We can make magic".
+                      - Inside includes 6 wax roses, 1 rose tree is gilded very luxuriously and the craftsman adds a fabric bear next to 6 wax roses with soft petals, along with many natural colors.
+                      - The gift box is designed with delicate and elegant decorative paper wrapped hard paper with the words "You and me together. We can make magic".
+                      - Material: Hard paper, plastic, cloth, rose wax.
+                      - Color: Red, pink, purple.
+                      - Gift box size: 33.5x7.3x5cm
+                      - Weight: 148 gr
+                  `,
+              },
+              {
+                img: "https://lh3.google.com/u/0/d/14CCA2WUvvr8nl9-zQq3IfLEgL_e9k9lX=w275-h261-p-k-nu-iv1",
+                title: "Hoa hồng led (2)",
+                specification: `
+                      - The gift box is designed with delicate and elegant decorative paper wrapped hard paper with the words "You and me together. We can make magic".
+                      - Inside includes 6 wax roses, 1 rose tree is gilded very luxuriously and the craftsman adds a fabric bear next to 6 wax roses with soft petals, along with many natural colors.
+                      - The gift box is designed with delicate and elegant decorative paper wrapped hard paper with the words "You and me together. We can make magic".
+                      - Material: Hard paper, plastic, cloth, rose wax.
+                      - Color: Red, pink, purple.
+                      - Gift box size: 33.5x7.3x5cm
+                      - Weight: 148 gr
+                  `,
+              },
+              {
+                img: "https://lh3.google.com/u/0/d/1kCh6MgWYPP-W6VmDOyNwCeFG-8KgKIIF=w275-h261-p-k-nu-iv1",
+                title: "Hoa hồng led (4)",
+                specification: `
+                      - The gift box is designed with delicate and elegant decorative paper wrapped hard paper with the words "You and me together. We can make magic".
+                      - Inside includes 6 wax roses, 1 rose tree is gilded very luxuriously and the craftsman adds a fabric bear next to 6 wax roses with soft petals, along with many natural colors.
+                      - The gift box is designed with delicate and elegant decorative paper wrapped hard paper with the words "You and me together. We can make magic".
+                      - Material: Hard paper, plastic, cloth, rose wax.
+                      - Color: Red, pink, purple.
+                      - Gift box size: 33.5x7.3x5cm
+                      - Weight: 148 gr
+                  `,
+              },
+              {
+                img: "https://lh3.google.com/u/0/d/1QUwoyD9KQD_Xtf0NPd-Bwftk92iWmimo=w275-h261-p-k-nu-iv1",
+                title: "Hoa và gấu (1)",
+                specification: `
+                      - Dimensions: 12x12x4.5cm
+                      - Weight: 0.1kg
+                      - Color: red, blue, pink
+                      - Material of the box: thick tin, smooth coating (like the picture)
+                      - New design, each rose is carefully cared for.
+                      - Rose Scented Wax Gift Box is a beautifully shaped and lively product with a seductive and delicate fragrance.
+                      - You will be captivated at first sight, by the beauty of roses with realistic to vivid lines.
+                      - With natural, beautiful colors, skillfully shaped from wax, can save the fragrance for 2-3 years, wax roses will help you send love messages to the recipient.
+                      - With luxurious and delicate design, gentle romantic fragrance, this is a gift instead of sincere caring feelings that you want to send to your loved ones and friends.
+                  `,
+              },
+              {
+                img: "https://lh3.google.com/u/0/d/1zeETcR72ovsT28Px6nqcbo0CjSWjdFLg=w275-h261-p-k-nu-iv1",
+                title: "Hoa và gấu (2)",
+                specification: `
+                  - Dimensions: 12x12x4.5cm
+                      - Weight: 0.1kg
+                      - Color: red, blue, pink
+                      - Material of the box: thick tin, smooth coating (like the picture)
+                      - New design, each rose is carefully cared for.
+                      - Rose Scented Wax Gift Box is a beautifully shaped and lively product with a seductive and delicate fragrance.
+                      - You will be captivated at first sight, by the beauty of roses with realistic to vivid lines.
+                      - With natural, beautiful colors, skillfully shaped from wax, can save the fragrance for 2-3 years, wax roses will help you send love messages to the recipient.
+                      - With luxurious and delicate design, gentle romantic fragrance, this is a gift instead of sincere caring feelings that you want to send to your loved ones and friends.
+                  `,
+              },
+              {
+                img: "https://lh3.google.com/u/0/d/1jrPL-jf-P3yE-ICz2TXHzUqdmE53qbs5=w275-h261-p-k-nu-iv1",
+                title: "Hoa và gấu (3)",
+                specification: `
+                  - Dimensions: 12x12x4.5cm
+                      - Weight: 0.1kg
+                      - Color: red, blue, pink
+                      - Material of the box: thick tin, smooth coating (like the picture)
+                      - New design, each rose is carefully cared for.
+                      - Rose Scented Wax Gift Box is a beautifully shaped and lively product with a seductive and delicate fragrance.
+                      - You will be captivated at first sight, by the beauty of roses with realistic to vivid lines.
+                      - With natural, beautiful colors, skillfully shaped from wax, can save the fragrance for 2-3 years, wax roses will help you send love messages to the recipient.
+                      - With luxurious and delicate design, gentle romantic fragrance, this is a gift instead of sincere caring feelings that you want to send to your loved ones and friends.
+                  `,
+              },
+              {
+                img: "https://lh3.google.com/u/0/d/1QUwoyD9KQD_Xtf0NPd-Bwftk92iWmimo=w275-h261-p-k-nu-iv1",
+                title: "Hoa và gấu (4)",
+                specification: `
+                  - Dimensions: 12x12x4.5cm
+                      - Weight: 0.1kg
+                      - Color: red, blue, pink
+                      - Material of the box: thick tin, smooth coating (like the picture)
+                      - New design, each rose is carefully cared for.
+                      - Rose Scented Wax Gift Box is a beautifully shaped and lively product with a seductive and delicate fragrance.
+                      - You will be captivated at first sight, by the beauty of roses with realistic to vivid lines.
+                      - With natural, beautiful colors, skillfully shaped from wax, can save the fragrance for 2-3 years, wax roses will help you send love messages to the recipient.
+                      - With luxurious and delicate design, gentle romantic fragrance, this is a gift instead of sincere caring feelings that you want to send to your loved ones and friends.
+                  `,
+              },
+              {
+                img: "https://lh3.google.com/u/0/d/1xE2sqL3N1oQEW5XWSaqNg03qLrmJ5EqG=w275-h261-p-k-nu-iv1",
+                title: "Hoa và gấu 5",
+                specification: `
+                  - Dimensions: 12x12x4.5cm
+                      - Weight: 0.1kg
+                      - Color: red, blue, pink
+                      - Material of the box: thick tin, smooth coating (like the picture)
+                      - New design, each rose is carefully cared for.
+                      - Rose Scented Wax Gift Box is a beautifully shaped and lively product with a seductive and delicate fragrance.
+                      - You will be captivated at first sight, by the beauty of roses with realistic to vivid lines.
+                      - With natural, beautiful colors, skillfully shaped from wax, can save the fragrance for 2-3 years, wax roses will help you send love messages to the recipient.
+                      - With luxurious and delicate design, gentle romantic fragrance, this is a gift instead of sincere caring feelings that you want to send to your loved ones and friends.
+                  `,
+              },
+            ];
+      
+            function renderProduct(title, data) {
+              return (
+                `
+              <div class="title-1">${title}</div>
+              ` +
+                `
+              <section class="section-products">
+                <div class="container">
+                  <div class="row">
+                    ` +
+                data
+                  ?.map(
+                    (item) => `<div class="col-md-6 col-lg-4 col-xl-3 product-item" data-name="${item?.title}" data-image="${item?.img}" data-desc="${item?.specification}">
+                      <div onclick="setProduct('${item?.img}', '${item?.title}', '${item?.specification?.replaceAll("\n", ",")}')" id="product-1" class="single-product" data-toggle="modal" data-target="#addadminprofile">
+                        <div class="part-1">
+                          <img
+                            style="width: 100%; object-fit: cover;"
+                            src="${item?.img}"
+                            alt=""
+                          />
+                          <ul>
+                            <li>
+                              <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                            </li>
+                            <li>
+                              <a href="#"><i class="fas fa-heart"></i></a>
+                            </li>
+                            <li>
+                              <a href="#"><i class="fas fa-plus"></i></a>
+                            </li>
+                            <li>
+                              <a href="#"><i class="fas fa-expand"></i></a>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="part-2">
+                          <h3 class="product-title" style="font-size:16px">${item?.title}</h3>
+                          <h4 class="product-old-price">$79.99</h4>
+                          <h4 class="product-price">$49.99</h4>
+                        </div>
+                      </div>
+                    </div>`
+                  )
+                  .join("") +
+                `   
+                  </div>
+                </div>
+              </section>
+              `
+              );
+            }
+            document.getElementById("wrap-p01").innerHTML = renderProduct(
+              "Best sellers products",
+              arr142
+            );
+          </script>
+          <script>
+            var dropdown = document.querySelector(".dropdown");
+            var dropdownContent = document.querySelector(".dropdown-content");
+      
+            dropdown.addEventListener("click", function () {
+              if (dropdownContent.style.display === "none") {
+                dropdownContent.style.display = "block";
+              } else {
+                dropdownContent.style.display = "none";
+              }
+            });
+          </script>
+          <script>
+              function setProduct(img, title, specification) {
+                  document.getElementById("product-img").src= img
+                  document.getElementById("product-title").innerHTML= title
+                  document.getElementById("product-specification").innerHTML= specification?.replaceAll(",", "\n")
+              }
+          </script>
+        <div class="panel-footer" style="text-align: center;">
+            Copyright &copy; by OtopuStore - Mar, 2023
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>

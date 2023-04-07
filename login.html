@@ -1,0 +1,464 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
+  
+  <style>
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropbtn {
+      background-color: #ed7186;
+      color: #9d9d9d;
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      z-index: 1;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  </style>
+  <style>
+  </style>
+
+</head>
+
+<style>
+    .input, .button, [type="submit"] {
+	 user-select: none;
+	 touch-action: manipulation;
+	 -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+}
+ *, *::before, *::after {
+	 box-sizing: border-box !important;
+}
+ html {
+	 font-size: 100%;
+}
+ @media screen and (min-width: 560px) {
+	 html {
+		 font-size: 112.5%;
+	}
+}
+ body {
+	 font-family: "Inter", sans-serif;
+	 background-color: royalblue;
+}
+ h1, h2, h3, h4, h5, h6 {
+	 line-height: 1;
+	 font-weight: 600;
+	 margin-top: 0.5rem;
+}
+ @keyframes fadein {
+	 0% {
+		 opacity: 0;
+		 transform: translate3d(0, -4px, 0);
+	}
+	 100% {
+		 opacity: 1;
+		 transform: translate3d(0, 0, 0);
+	}
+}
+ form, form > *, .container, section {
+	 opacity: 0;
+	 transform: translate3d(0, -4px, 0);
+	 animation-name: fadein;
+	 animation-direction: forwards;
+	 animation-fill-mode: both;
+	 animation-iteration-count: 1;
+	 animation-duration: 700ms;
+	 animation-delay: 600ms;
+}
+ .title {
+	 margin-bottom: 2rem;
+}
+ .hidden {
+	 display: none;
+}
+ .icon {
+	 width: 1.5em;
+	 height: 1.5em;
+	 position: absolute;
+	 top: 2em;
+	 right: 5px;
+	 pointer-events: none;
+	 z-index: 2;
+}
+ .icon.icon-success {
+	 stroke: green;
+}
+ .icon.icon-error {
+	 stroke: red;
+}
+ .container, section {
+	 max-width: 32em;
+	 margin: 2.5em auto;
+	 padding: 2.5em;
+	 border-radius: 1em;
+	 background-color: white;
+	 transition: all 200ms;
+}
+ .label, label {
+	 font-weight: 500;
+	 display: block;
+	 color: #333;
+	 margin-bottom: 0.25em;
+	 color: #2d3748;
+	 font-size: 1em;
+}
+ .input {
+	 appearance: none;
+	 display: block;
+	 width: 100%;
+	 color: #2d3748;
+	 border: 1px solid #cbd5e0;
+	 line-height: 1.25;
+	 background-color: white;
+	 padding: 0.65em 0.75em;
+	 border-radius: 0.375em;
+	 font-size: 1em;
+	 transition: all 200ms;
+}
+ .input:hover {
+	 background-color: #f8f9fa;
+}
+ .input::placeholder {
+	 color: #a0aec0;
+	 font-weight: 400;
+}
+ .input.input-error {
+	 border-color: red;
+	 transition: all 200ms;
+}
+ .input.input-error:focus {
+	 border-color: lightpink;
+}
+ .input:focus {
+	 outline: none;
+	 border: 1px solid #a0aec0;
+	 box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06), 0 0 0 4px rgba(65, 105, 225, 0.2);
+	 background-clip: padding-box;
+	 border-color: royalblue;
+	 background-color: #f1f1f4;
+	 outline: solid 6px rgba(65, 105, 225, 0.25);
+	 outline-offset: -2px;
+	 outline: none !important;
+}
+ .input-group {
+	 margin-bottom: 2em;
+	 position: relative;
+	 transition: all 200ms;
+}
+ .error-message {
+	 font-size: 0.85em;
+	 color: red;
+	 transition: all 200ms;
+}
+ .button, [type="submit"] {
+	 background-color: royalblue;
+	 padding: 1em 1.5em;
+	 border: none;
+	 border-radius: 0.375em;
+	 color: white;
+	 font-weight: 500;
+	 display: block;
+	 width: 100%;
+	 text-align: center;
+	 cursor: pointer;
+	 letter-spacing: 0.75px;
+	 transition: all 120ms !important;
+	 transform: translate3d(0, 0, 0);
+}
+ .button:active, [type="submit"]:active {
+	 background-color: #214cce;
+	 transform: translate3d(0, 2px, 0) !important;
+}
+ .button:hover, [type="submit"]:hover {
+	 filter: brightness(110%);
+}
+ .button:focus, [type="submit"]:focus {
+	 outline: solid 6px rgba(65, 105, 225, 0.25);
+	 outline-offset: -2px;
+	 box-shadow: 0 0 0 4px rgba(65, 105, 225, 0.2);
+	 outline: none !important;
+}
+ label {
+	 transition: all 200ms;
+}
+ fieldset, legend {
+	 display: block;
+	 width: 100%;
+	 border: none;
+	 padding: 0;
+	 margin: 0;
+}
+ legend {
+	 font-weight: 500;
+	 font-size: x-large;
+	 margin: 0 auto 1.5rem;
+}
+ form {
+	 transition: all 200ms;
+}
+ form footer {
+	 width: 100%;
+	 margin: 1rem 0 0;
+	 padding: 1rem 0 0;
+	 transition: all 200ms;
+}
+ form footer p {
+	 line-height: 1 !important;
+	 margin: 0 auto !important;
+	 text-align: center;
+	 transition: all 200ms;
+}
+ form * {
+	 transition: all 200ms;
+}
+ a, a:link {
+	 color: royalblue;
+	 font-weight: 500;
+	 text-decoration: none;
+	 cursor: pointer;
+	 transition: all 120ms;
+}
+.input-group {
+    width: 100% !important;
+}
+label {
+    text-align: left !important ;
+    width: 100%;
+}
+input {
+    width: 100% !important;
+}
+ 
+</style>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+            <a style="display: flex; justify-content: center; align-items: center; gap: 10px" class="navbar-brand" href="#" ><image src="logo.jpg" height="30px" width="30px"> OtopuStore</a>
+        </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="products.html">Product</a></li>
+            <li><a href="favoriteset.html">Favorite Sets</a></li>
+            <li class="dropdown">
+                <button class="dropbtn">Category</button>
+                <div class="dropdown-content">
+                  <a href="14_2.html">14 / 2</a>
+                  <a href="birthday.html">Birthday</a>
+                  <a href="motherdays.html">Mother's day</a>
+                  <a href="noel.html">Noel</a>
+                </div>
+            </li>
+        </ul>
+
+        <form class="navbar-form navbar-left" id="formSearch">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search" id="search" name="search">
+                <div class="input-group-btn">
+                    <button class="btn btn-default" type="submit">
+                        <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+
+
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="contact.html">Contact us</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+    </div><!-- /.navbar-collapse -->
+</nav>
+<div class="signup-form">
+    <div class="container">
+      <div class="header">
+        <h1>Login</h1>
+        <p>Login to use services !</p>
+      </div>
+      <form>
+        <div class="input">
+          <i class="fa-solid fa-user"></i>
+          <input type="text" placeholder="Username" />
+        </div>
+        <div class="input">
+          <i class="fa-solid fa-lock"></i>
+          <input type="password" placeholder="Password" />
+        </div>
+        <input class="signup-btn" type="submit" value="SIGN UP" />
+      </form>
+      <p>Or sign in with</p>
+      <div class="social-icons">
+        <i class="fa-brands fa-facebook-f"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-google"></i>
+      </div>
+      <p>Don't have an account? <a href="#">Sign up</a></p>
+    </div>
+  </div>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+  
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+      outline-color: #a5b4fc;
+    }
+  
+    body {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background-color: #e2e8f0;
+    }
+  
+    p {
+      font-size: 14px;
+      color: #6b7280;
+    }
+  
+    .signup-form {
+      margin-top: 100px;
+      margin-bottom: 100px;
+      width: 480px;
+      border-radius: 8px;
+      background-color: #ffffff;
+      box-shadow: 2px 4px 8px #6b728040;
+      text-align: center;
+    }
+  
+    .header {
+      margin-bottom: 48px;
+    }
+  
+    .header h1 {
+      font-weight: bolder;
+      font-size: 28px;
+      color: #6366f1;
+    }
+  
+    .input {
+      position: relative;
+      margin-bottom: 24px;
+    }
+  
+    .input input {
+      width: 100%;
+      border: none;
+      padding: 8px 40px;
+      border-radius: 4px;
+      background-color: #f3f4f6;
+      color: #1f2937;
+      font-size: 16px;
+    }
+  
+    .input input::placeholder {
+      color: #6b7280;
+    }
+  
+    .input i {
+      top: 50%;
+      width: 36px;
+      position: absolute;
+      transform: translateY(-50%);
+      color: #6b7280;
+      font-size: 16px;
+    }
+  
+    .signup-btn {
+      width: 100%;
+      border: none;
+      padding: 8px 0;
+      margin: 24px 0;
+      border-radius: 4px;
+      background-color: #6366f1;
+      color: #ffffff;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  
+    .signup-btn:active {
+      background-color: #4f46e5;
+      transition: all 0.3s ease;
+    }
+  
+    .social-icons i {
+      height: 36px;
+      width: 36px;
+      line-height: 36px;
+      border-radius: 50%;
+      margin: 24px 8px 48px 8px;
+      background-color: gray;
+      color: #ffffff;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  
+    i.fa-facebook-f {
+      background-color: #3b5998;
+    }
+  
+    i.fa-twitter {
+      background-color: #1da1f2;
+    }
+  
+    i.fa-google {
+      background-color: #dd4b39;
+    }
+  
+    a {
+      color: #6366f1;
+      text-decoration: none;
+    }
+  </style>
+  
