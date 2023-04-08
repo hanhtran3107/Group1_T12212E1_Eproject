@@ -138,8 +138,8 @@ function productDetail(){
             d += `
                 <div class="row">
                     <div class="col-md-6">
-                        <div><img src="${v.pic}" alt="" class="flowerImage"></div>
-                    </div>
+                        <div><img referrerpolicy="no-referrer" src="${v.pic}" alt="" class="flowerImage"></div>
+                    </div> 
                     <div class="col-md-6">
                         <h3>${v.name.toUpperCase()}</h3>
                         <h1>Price: ${v.price}</h1>
